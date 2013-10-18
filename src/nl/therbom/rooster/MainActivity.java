@@ -46,6 +46,8 @@ public class MainActivity extends Activity {
         mOutput.getSettings().setBuiltInZoomControls(true);
         // Hide zoom buttons, they are ugly
         mOutput.getSettings().setDisplayZoomControls(false);
+        // Maximize zoom out options
+        mOutput.getSettings().setUseWideViewPort(true);
         
         // Initialize the button
         final Button mButton = (Button)findViewById(R.id.button_input);
