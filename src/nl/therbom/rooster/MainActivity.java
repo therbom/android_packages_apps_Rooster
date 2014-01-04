@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 	    return false;
 	}
 	
-    @SuppressLint("SetJavaScriptEnabled") @Override
+    @SuppressLint({ "SetJavaScriptEnabled", "NewApi" }) @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -45,7 +45,9 @@ public class MainActivity extends Activity {
         // Enable zoom controls
         mOutput.getSettings().setBuiltInZoomControls(true);
         // Hide zoom buttons, they are ugly
-        mOutput.getSettings().setDisplayZoomControls(false);
+        if(android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.GINGERBREAD_MR1) {
+        	mOutput.getSettings().setDisplayZoomControls(false);
+        }
         // Maximize zoom out options
         mOutput.getSettings().setUseWideViewPort(true);
         
@@ -106,7 +108,7 @@ public class MainActivity extends Activity {
             		 * If so, set the correct URL
             		 */
             		if(mPattern1.matcher(mCode).find()) {
-            			mUrl = "http://www.damstede.net/rooster/infoweb/index.php?ref=2&id=";
+            			mUrl = "http://www.damstede.net/roosterdocenten/infoweb/index.php?ref=2&id=";
             		} else if(mPattern2.matcher(mCode).find()) {
             			mUrl = "http://www.damstede.net/roosterdocenten/infoweb/index.php?ref=3&id=";           		
             		} else if(mPattern3.matcher(mCode).find() || mPattern4.matcher(mCode).find() || mPattern5.matcher(mCode).find() || mPattern9.matcher(mCode).find()) {
