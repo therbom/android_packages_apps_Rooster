@@ -108,13 +108,13 @@ public class MainActivity extends Activity {
             		 * If so, set the correct URL
             		 */
             		if(mPattern1.matcher(mCode).find()) {
-            			mUrl = "http://www.damstede.net/roosterdocenten/infoweb/index.php?ref=2&id=";
+            			mUrl = "http://www.damstede.eu/rooster/infoweb/index.php?ref=2&id=";
             		} else if(mPattern2.matcher(mCode).find()) {
-            			mUrl = "http://www.damstede.net/roosterdocenten/infoweb/index.php?ref=3&id=";           		
+            			mUrl = "http://www.damstede.eu/rooster/infoweb/index.php?ref=3&id=";           		
             		} else if(mPattern3.matcher(mCode).find() || mPattern4.matcher(mCode).find() || mPattern5.matcher(mCode).find() || mPattern9.matcher(mCode).find()) {
-            			mUrl = "http://www.damstede.net/rooster/infoweb/index.php?ref=5&id=";
+            			mUrl = "http://www.damstede.eu/rooster/infoweb/index.php?ref=5&id=";
             		} else if(mPattern6.matcher(mCode).find() || mPattern7.matcher(mCode).find() || mPattern8.matcher(mCode).find()) {
-            			mUrl = "http://www.damstede.net/roosterdocenten/infoweb/index.php?ref=4&id=";
+            			mUrl = "http://www.damstede.eu/rooster/infoweb/index.php?ref=4&id=";
             		}
             	
             		/*
